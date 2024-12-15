@@ -1,5 +1,5 @@
 """
-URL configuration for onlinecompiler project.
+URL configuration for onlineCompiler project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.1/topics/http/urls/
@@ -16,7 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from compiler import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('',views.welcome,name='welcome'),
+    path('signup/', views.signup, name='signup'),
+    path('login/',views.login, name='login'),
+    path('users/',views.getUsers,name='users'),
 ]
